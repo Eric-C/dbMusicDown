@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		079696521647556F00842CB5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079696511647556F00842CB5 /* Cocoa.framework */; };
+		0796965C1647556F00842CB5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0796965A1647556F00842CB5 /* InfoPlist.strings */; };
+		0796965E1647556F00842CB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796965D1647556F00842CB5 /* main.m */; };
+		079696621647556F00842CB5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 079696601647556F00842CB5 /* Credits.rtf */; };
+		079696651647556F00842CB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 079696641647556F00842CB5 /* AppDelegate.m */; };
+		079696681647556F00842CB5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079696661647556F00842CB5 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0796964D1647556F00842CB5 /* dbMusicDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dbMusicDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		079696511647556F00842CB5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		079696541647556F00842CB5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		079696551647556F00842CB5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		079696561647556F00842CB5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		079696591647556F00842CB5 /* dbMusicDown-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dbMusicDown-Info.plist"; sourceTree = "<group>"; };
+		0796965B1647556F00842CB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0796965D1647556F00842CB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0796965F1647556F00842CB5 /* dbMusicDown-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dbMusicDown-Prefix.pch"; sourceTree = "<group>"; };
+		079696611647556F00842CB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		079696631647556F00842CB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		079696641647556F00842CB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		079696671647556F00842CB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0796964A1647556F00842CB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				079696521647556F00842CB5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		079696421647556F00842CB5 = {
+			isa = PBXGroup;
+			children = (
+				079696571647556F00842CB5 /* dbMusicDown */,
+				079696501647556F00842CB5 /* Frameworks */,
+				0796964E1647556F00842CB5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0796964E1647556F00842CB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0796964D1647556F00842CB5 /* dbMusicDown.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		079696501647556F00842CB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				079696511647556F00842CB5 /* Cocoa.framework */,
+				079696531647556F00842CB5 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		079696531647556F00842CB5 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				079696541647556F00842CB5 /* AppKit.framework */,
+				079696551647556F00842CB5 /* CoreData.framework */,
+				079696561647556F00842CB5 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		079696571647556F00842CB5 /* dbMusicDown */ = {
+			isa = PBXGroup;
+			children = (
+				079696631647556F00842CB5 /* AppDelegate.h */,
+				079696641647556F00842CB5 /* AppDelegate.m */,
+				079696661647556F00842CB5 /* MainMenu.xib */,
+				079696581647556F00842CB5 /* Supporting Files */,
+			);
+			path = dbMusicDown;
+			sourceTree = "<group>";
+		};
+		079696581647556F00842CB5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				079696591647556F00842CB5 /* dbMusicDown-Info.plist */,
+				0796965A1647556F00842CB5 /* InfoPlist.strings */,
+				0796965D1647556F00842CB5 /* main.m */,
+				0796965F1647556F00842CB5 /* dbMusicDown-Prefix.pch */,
+				079696601647556F00842CB5 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0796964C1647556F00842CB5 /* dbMusicDown */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0796966B1647556F00842CB5 /* Build configuration list for PBXNativeTarget "dbMusicDown" */;
+			buildPhases = (
+				079696491647556F00842CB5 /* Sources */,
+				0796964A1647556F00842CB5 /* Frameworks */,
+				0796964B1647556F00842CB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dbMusicDown;
+			productName = dbMusicDown;
+			productReference = 0796964D1647556F00842CB5 /* dbMusicDown.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		079696441647556F00842CB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Eric.C;
+			};
+			buildConfigurationList = 079696471647556F00842CB5 /* Build configuration list for PBXProject "dbMusicDown" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 079696421647556F00842CB5;
+			productRefGroup = 0796964E1647556F00842CB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0796964C1647556F00842CB5 /* dbMusicDown */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0796964B1647556F00842CB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0796965C1647556F00842CB5 /* InfoPlist.strings in Resources */,
+				079696621647556F00842CB5 /* Credits.rtf in Resources */,
+				079696681647556F00842CB5 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		079696491647556F00842CB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0796965E1647556F00842CB5 /* main.m in Sources */,
+				079696651647556F00842CB5 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0796965A1647556F00842CB5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0796965B1647556F00842CB5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		079696601647556F00842CB5 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				079696611647556F00842CB5 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		079696661647556F00842CB5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				079696671647556F00842CB5 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		079696691647556F00842CB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0796966A1647556F00842CB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0796966C1647556F00842CB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dbMusicDown/dbMusicDown-Prefix.pch";
+				INFOPLIST_FILE = "dbMusicDown/dbMusicDown-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0796966D1647556F00842CB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dbMusicDown/dbMusicDown-Prefix.pch";
+				INFOPLIST_FILE = "dbMusicDown/dbMusicDown-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		079696471647556F00842CB5 /* Build configuration list for PBXProject "dbMusicDown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				079696691647556F00842CB5 /* Debug */,
+				0796966A1647556F00842CB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0796966B1647556F00842CB5 /* Build configuration list for PBXNativeTarget "dbMusicDown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0796966C1647556F00842CB5 /* Debug */,
+				0796966D1647556F00842CB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 079696441647556F00842CB5 /* Project object */;
+}
