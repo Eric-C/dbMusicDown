@@ -2,7 +2,7 @@
 //  main.m
 //  dbMusicDown
 //
-//  Created by Eric.C on 12-11-5.
+//  Created by Eric.C on 12-11-2.
 //  Copyright (c) 2012年 Eric.C. All rights reserved.
 //
 
