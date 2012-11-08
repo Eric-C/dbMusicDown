@@ -37,6 +37,7 @@
 		079696651647556F00842CB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 079696641647556F00842CB5 /* AppDelegate.m */; };
 		079696681647556F00842CB5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079696661647556F00842CB5 /* MainMenu.xib */; };
 		07998648164B3E0400332D2D /* dbMusicDown-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07998647164B3E0400332D2D /* dbMusicDown-Info.plist */; };
+		07998652164B96E400332D2D /* dbLikelistFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 07998651164B96E400332D2D /* dbLikelistFetch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,8 @@
 		079696641647556F00842CB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		079696671647556F00842CB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		07998647164B3E0400332D2D /* dbMusicDown-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dbMusicDown-Info.plist"; sourceTree = "<group>"; };
+		07998650164B96E400332D2D /* dbLikelistFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbLikelistFetch.h; sourceTree = "<group>"; };
+		07998651164B96E400332D2D /* dbLikelistFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbLikelistFetch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +222,8 @@
 		079696571647556F00842CB5 /* dbMusicDown */ = {
 			isa = PBXGroup;
 			children = (
+				07998650164B96E400332D2D /* dbLikelistFetch.h */,
+				07998651164B96E400332D2D /* dbLikelistFetch.m */,
 				07998647164B3E0400332D2D /* dbMusicDown-Info.plist */,
 				079696631647556F00842CB5 /* AppDelegate.h */,
 				079696641647556F00842CB5 /* AppDelegate.m */,
@@ -326,6 +331,7 @@
 				0757D5EF164AA778006CF0BE /* SBJsonTokeniser.m in Sources */,
 				0757D5F0164AA778006CF0BE /* SBJsonUTF8Stream.m in Sources */,
 				0757D5F1164AA778006CF0BE /* SBJsonWriter.m in Sources */,
+				07998652164B96E400332D2D /* dbLikelistFetch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
