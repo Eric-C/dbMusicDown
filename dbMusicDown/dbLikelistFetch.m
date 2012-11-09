@@ -34,7 +34,7 @@
 
 - (NSError *)LoginWithUsername:(NSString *)userName Password:(NSString *)password
 {
-    NSString* loginString = [kBaseLoginUrl stringByAppendingFormat:@"?email=%@&password=%@&app_name=%@&version=%@", @"mr.cyclopedia@gmail.com", @"2395320", @"radio_desktop_win", @"100"];
+    NSString* loginString = [kBaseLoginUrl stringByAppendingFormat:@"?email=%@&password=%@&app_name=%@&version=%@", userName, password, @"radio_desktop_win", @"100"];
     NSURL* loginUrl = [NSURL URLWithString:loginString];
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:loginUrl];

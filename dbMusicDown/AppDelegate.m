@@ -8,7 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
 #import "dbLikelistFetch.h"
-
+#import "songlistTableviewController.h"
+#import "ASIHTTPRequest.h"
 
 @implementation AppDelegate
 
@@ -24,9 +25,25 @@
 }
 
 - (IBAction)getSonglist:(NSButton *)sender {
+    
     dbLikelistFetch* listFetch = [[dbLikelistFetch alloc] init];
     [listFetch LoginWithUsername:@"mr.cyclopedia@gmail.com" Password:@"2395320"];
     [listFetch FetchLikeList];
-    [listFetch release];
+   // [listFetch release];
+    
+    NSString * path = @"/Users/Eric/Downloads/1.mp3";
+
+    DoubanMusicInfo* info = [listFetch.songList objectAtIndex:2];
+    
+    NSURL *url = [ NSURL URLWithString : info.songUrl ];
+    
+    ASIHTTPRequest *request = [ ASIHTTPRequest requestWithURL :url];
+    
+    [request setDownloadDestinationPath :path];
+    
+   // [request setDownloadProgressDelegate : progressView ];
+    
+    [request startSynchronous ];
+     
 }
 @end
