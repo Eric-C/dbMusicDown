@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071A8244164E2BC0004F1697 /* favicon_48x48.png in Resources */ = {isa = PBXBuildFile; fileRef = 071A8243164E2BC0004F1697 /* favicon_48x48.png */; };
+		071A8248164E2D23004F1697 /* UserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 071A8246164E2D23004F1697 /* UserLoginViewController.m */; };
+		071A8249164E2D23004F1697 /* UserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071A8247164E2D23004F1697 /* UserLoginViewController.xib */; };
 		0757D5BB164A99A1006CF0BE /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0757D5AA164A99A1006CF0BE /* ASIDataCompressor.m */; };
 		0757D5BC164A99A1006CF0BE /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0757D5AC164A99A1006CF0BE /* ASIDataDecompressor.m */; };
 		0757D5BD164A99A1006CF0BE /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0757D5AE164A99A1006CF0BE /* ASIDownloadCache.m */; };
@@ -42,6 +45,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		071A8243164E2BC0004F1697 /* favicon_48x48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favicon_48x48.png; sourceTree = "<group>"; };
+		071A8245164E2D23004F1697 /* UserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginViewController.h; sourceTree = "<group>"; };
+		071A8246164E2D23004F1697 /* UserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLoginViewController.m; sourceTree = "<group>"; };
+		071A8247164E2D23004F1697 /* UserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserLoginViewController.xib; sourceTree = "<group>"; };
+		071A824B164E48E1004F1697 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		0757D5A8164A99A1006CF0BE /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
 		0757D5A9164A99A1006CF0BE /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
 		0757D5AA164A99A1006CF0BE /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
@@ -124,6 +132,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		071A824A164E2D2C004F1697 /* UserLogin */ = {
+			isa = PBXGroup;
+			children = (
+				071A8245164E2D23004F1697 /* UserLoginViewController.h */,
+				071A8246164E2D23004F1697 /* UserLoginViewController.m */,
+				071A8247164E2D23004F1697 /* UserLoginViewController.xib */,
+			);
+			name = UserLogin;
+			sourceTree = "<group>";
+		};
 		0757D5A5164A99A1006CF0BE /* ASIHttpRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +243,8 @@
 		079696571647556F00842CB5 /* dbMusicDown */ = {
 			isa = PBXGroup;
 			children = (
+				071A824B164E48E1004F1697 /* SynthesizeSingleton.h */,
+				071A824A164E2D2C004F1697 /* UserLogin */,
 				07966561164CAF8100D7CD33 /* songlistTableviewController.h */,
 				07966562164CAF8100D7CD33 /* songlistTableviewController.m */,
 				07998650164B96E400332D2D /* dbLikelistFetch.h */,
@@ -241,6 +261,7 @@
 		079696581647556F00842CB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				071A8243164E2BC0004F1697 /* favicon_48x48.png */,
 				079696591647556F00842CB5 /* dbMusicDown-Info.plist */,
 				0796965A1647556F00842CB5 /* InfoPlist.strings */,
 				0796965D1647556F00842CB5 /* main.m */,
@@ -305,6 +326,8 @@
 				079696621647556F00842CB5 /* Credits.rtf in Resources */,
 				079696681647556F00842CB5 /* MainMenu.xib in Resources */,
 				07998648164B3E0400332D2D /* dbMusicDown-Info.plist in Resources */,
+				071A8244164E2BC0004F1697 /* favicon_48x48.png in Resources */,
+				071A8249164E2D23004F1697 /* UserLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +361,7 @@
 				0757D5F1164AA778006CF0BE /* SBJsonWriter.m in Sources */,
 				07998652164B96E400332D2D /* dbLikelistFetch.m in Sources */,
 				07966563164CAF8100D7CD33 /* songlistTableviewController.m in Sources */,
+				071A8248164E2D23004F1697 /* UserLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

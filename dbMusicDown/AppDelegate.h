@@ -7,11 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "UserLoginViewController.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, LoginDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSView *usrLoginAndInfoView;
 
-- (IBAction)getSonglist:(NSButton *)sender;
+
+//- (IBAction)getSonglist:(NSButton *)sender;
 
 @end

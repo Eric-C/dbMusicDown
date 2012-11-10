@@ -7,15 +7,24 @@
 //
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
+#import "UserLoginViewController.h"
 #import "dbLikelistFetch.h"
-#import "songlistTableviewController.h"
-#import "ASIHTTPRequest.h"
+
+NSString *const kUserLoginView = @"UserLoginViewController";
+
+@interface AppDelegate ()
+
+@property (nonatomic, retain) UserLoginViewController *loginViewController;
+
+@end
 
 @implementation AppDelegate
-
+@synthesize usrLoginAndInfoView = _usrLoginAndInfoView;
+@synthesize loginViewController = _loginViewController;
 
 - (void)dealloc
 {
+    [_loginViewController release];
     [super dealloc];
 }
 
@@ -24,8 +33,24 @@
     // Insert code here to initialize your application
 }
 
-- (IBAction)getSonglist:(NSButton *)sender {
+- (void)awakeFromNib
+{
+	//Show UsrLoginView if not autoLogin
+    _loginViewController = [[UserLoginViewController alloc] initWithNibName:kUserLoginView bundle:nil];
+    _loginViewController.delegate = self;
+    [_usrLoginAndInfoView addSubview:_loginViewController.view];
+    [_loginViewController.view setFrame:_usrLoginAndInfoView.bounds];
     
+}
+
+- (void)loginWithUsrname:(NSString *)userName Password:(NSString *)password
+{
+    [[dbLikelistFetch sharedInstance] LoginWithUsername:userName Password:password];
+    [_loginViewController.view setHidden:YES];
+}
+
+- (IBAction)getSonglist:(NSButton *)sender {
+  /*
     dbLikelistFetch* listFetch = [[dbLikelistFetch alloc] init];
     [listFetch LoginWithUsername:@"mr.cyclopedia@gmail.com" Password:@"2395320"];
     [listFetch FetchLikeList];
@@ -45,5 +70,6 @@
     
     [request startSynchronous ];
      
+   */
 }
 @end

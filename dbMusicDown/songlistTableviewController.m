@@ -14,31 +14,28 @@
 
 @implementation songlistTableviewController
 @synthesize tableView = _tableView;
-@synthesize likeListFetch = _likeListFetch;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
-        _likeListFetch = [[dbLikelistFetch alloc] init];
-        
-         [_likeListFetch LoginWithUsername:@"ruhan@douban.com" Password:@"ruhan"];
+        //[[ LoginWithUsername:@"ruhan@douban.com" Password:@"ruhan"];
         //[_likeListFetch LoginWithUsername:@"mr.cyclopedia@gmail.com" Password:@"2395320"];
-        [_likeListFetch FetchLikeList];
+        //[_likeListFetch FetchLikeList];
     }
     
     return self;
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return [_likeListFetch.songList count];
+   // return [_likeListFetch.songList count];
 }
 
 // This method is optional if you use bindings to provide the data
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     NSString *identifier = [tableColumn identifier];
-    DoubanMusicInfo* info = [_likeListFetch.songList objectAtIndex:row];
+    DoubanMusicInfo* info = [[dbLikelistFetch sharedInstance].songList objectAtIndex:row];
     
     if ([identifier isEqualToString:@"TitleCell"]) {
         NSTableCellView *cellView = [_tableView makeViewWithIdentifier:identifier owner:self];

@@ -12,6 +12,5 @@
 @interface songlistTableviewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (assign) IBOutlet NSTableView *tableView;
-@property (nonatomic, retain) dbLikelistFetch *likeListFetch;
 
 @end

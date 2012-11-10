@@ -25,6 +25,8 @@
 @synthesize loginInfo = _loginInfo;
 @synthesize songList = _songList;
 
+SYNTHESIZE_SINGLETON_FOR_CLASS(dbLikelistFetch);
+
 - (void)dealloc
 {
     [super dealloc];
