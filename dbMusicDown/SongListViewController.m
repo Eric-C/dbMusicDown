@@ -61,10 +61,11 @@
     if (keyArray.count == 1) {
         NSString *indexString = [keyArray objectAtIndex:0];
         DoubanMusicInfo *musicInfo = [[dbLikelistFetch sharedInstance].songList objectAtIndex:[indexString integerValue]];
-        NSString *destPath = [@"/Users/Eric/Downloads/" stringByAppendingFormat:@"%@-%@.mp3",
+        NSString *fileName = [NSString stringWithFormat:@"%@-%@.mp3",
                               musicInfo.title, musicInfo.artist];
+        NSString* path = [[@"~/Music/" stringByExpandingTildeInPath] stringByAppendingPathComponent:fileName];
         
-        [aDownload setDestination:destPath allowOverwrite:YES];
+        [aDownload setDestination:path allowOverwrite:YES];
         
         return;
     }
