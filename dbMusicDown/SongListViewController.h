@@ -8,17 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@protocol DownloadViewDelegate
-
-@required -(void)downloadArray:(NSMutableArray *)array;
-
-@end
-
-@interface SongListViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
+@interface SongListViewController : NSViewController <NSTableViewDataSource, NSURLDownloadDelegate>
 
 @property (assign) IBOutlet NSTableView *tableView;
-@property (nonatomic, retain) id<DownloadViewDelegate> delegate;
 
-- (IBAction)checkBoxClicked:(NSButton *)sender;
-- (IBAction)downloadClicked:(NSButton *)sender;
+- (IBAction)downloadClicked:(id)sender;
+
 @end

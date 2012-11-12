@@ -47,6 +47,7 @@
 		07A6F70E164E6E180009CFDD /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6F70C164E6E180009CFDD /* UserInfoViewController.xib */; };
 		07A6F713164E76BE0009CFDD /* SongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6F711164E76BE0009CFDD /* SongListViewController.m */; };
 		07A6F714164E76BE0009CFDD /* SongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6F712164E76BE0009CFDD /* SongListViewController.xib */; };
+		07A82BA116513EAC0037115C /* SongInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A82BA016513EAC0037115C /* SongInfoCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,8 @@
 		07A6F710164E76BE0009CFDD /* SongListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongListViewController.h; sourceTree = "<group>"; };
 		07A6F711164E76BE0009CFDD /* SongListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongListViewController.m; sourceTree = "<group>"; };
 		07A6F712164E76BE0009CFDD /* SongListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListViewController.xib; sourceTree = "<group>"; };
+		07A82B9F16513EAC0037115C /* SongInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfoCellView.h; sourceTree = "<group>"; };
+		07A82BA016513EAC0037115C /* SongInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfoCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +303,8 @@
 				07A6F710164E76BE0009CFDD /* SongListViewController.h */,
 				07A6F711164E76BE0009CFDD /* SongListViewController.m */,
 				07A6F712164E76BE0009CFDD /* SongListViewController.xib */,
+				07A82B9F16513EAC0037115C /* SongInfoCellView.h */,
+				07A82BA016513EAC0037115C /* SongInfoCellView.m */,
 			);
 			name = SongList;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				07A6F70D164E6E180009CFDD /* UserInfoViewController.m in Sources */,
 				07A6F713164E76BE0009CFDD /* SongListViewController.m in Sources */,
 				077848AA164EAE32008A9F34 /* DownloadViewController.m in Sources */,
+				07A82BA116513EAC0037115C /* SongInfoCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

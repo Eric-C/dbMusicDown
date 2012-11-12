@@ -88,7 +88,7 @@ NSString *const kDownloadView = @"DownloadViewController";
     [_downloadViewTarget addSubview:_downloadViewController.view];
     [_downloadViewController.view setFrame:_downloadViewTarget.bounds];
     
-    _songListViewController.delegate = _downloadViewController;
+    //_songListViewController.delegate = _downloadViewController;
     
     //Show UsrLoginView if not autoLogin
     self.isLogin = NO;

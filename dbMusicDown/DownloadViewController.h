@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "SongListViewController.h"
 
-@interface DownloadViewController : NSViewController <DownloadViewDelegate>
+@interface DownloadViewController : NSViewController
 @property (assign) IBOutlet NSTextField *downloadTextfield1;
 @property (assign) IBOutlet NSTextField *downloadTextfield2;
 @property (assign) IBOutlet NSTextField *downloadTextfield3;
