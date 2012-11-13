@@ -41,7 +41,6 @@
 		079696621647556F00842CB5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 079696601647556F00842CB5 /* Credits.rtf */; };
 		079696651647556F00842CB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 079696641647556F00842CB5 /* AppDelegate.m */; };
 		079696681647556F00842CB5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079696661647556F00842CB5 /* MainMenu.xib */; };
-		07998648164B3E0400332D2D /* dbMusicDown-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07998647164B3E0400332D2D /* dbMusicDown-Info.plist */; };
 		07998652164B96E400332D2D /* dbLikelistFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 07998651164B96E400332D2D /* dbLikelistFetch.m */; };
 		07A6F70D164E6E180009CFDD /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6F70B164E6E180009CFDD /* UserInfoViewController.m */; };
 		07A6F70E164E6E180009CFDD /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6F70C164E6E180009CFDD /* UserInfoViewController.xib */; };
@@ -373,7 +372,6 @@
 				0796965C1647556F00842CB5 /* InfoPlist.strings in Resources */,
 				079696621647556F00842CB5 /* Credits.rtf in Resources */,
 				079696681647556F00842CB5 /* MainMenu.xib in Resources */,
-				07998648164B3E0400332D2D /* dbMusicDown-Info.plist in Resources */,
 				071A8244164E2BC0004F1697 /* favicon_48x48.png in Resources */,
 				071A8249164E2D23004F1697 /* UserLoginViewController.xib in Resources */,
 				07A6F70E164E6E180009CFDD /* UserInfoViewController.xib in Resources */,
