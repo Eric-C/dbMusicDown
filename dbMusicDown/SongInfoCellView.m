@@ -14,6 +14,7 @@
 @synthesize artistTextField = _artistTextField;
 @synthesize albumTextField = _albumTextField;
 @synthesize downloadButton = _downloadButton;
+@synthesize openFolderButton = _openFolderButton;
 @synthesize downloadProgress = _downloadProgress;
 
 - (id)initWithFrame:(NSRect)frame

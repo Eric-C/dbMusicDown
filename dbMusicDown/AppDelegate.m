@@ -93,9 +93,8 @@ NSString *const kDownloadView = @"DownloadViewController";
     NSString *errorDesc = nil;
     NSPropertyListFormat format;
     NSString *plistPath;
-    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                              NSUserDomainMask, YES) objectAtIndex:0];
-    plistPath = [rootPath stringByAppendingPathComponent:@"Data.plist"];
+    NSString *rootPath = NSTemporaryDirectory();
+    plistPath = [rootPath stringByAppendingPathComponent:@"dbMusicDown.plist"];
     if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
         plistPath = [[NSBundle mainBundle] pathForResource:@"Data" ofType:@"plist"];
     }
@@ -123,8 +122,8 @@ NSString *const kDownloadView = @"DownloadViewController";
     NSNumber *bAutoLogin = [NSNumber numberWithInteger:_loginViewController.autoLoginCheckbox.state];
     
     NSString *error;
-    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *plistPath = [rootPath stringByAppendingPathComponent:@"Data.plist"];
+    NSString *rootPath = NSTemporaryDirectory();
+    NSString *plistPath = [rootPath stringByAppendingPathComponent:@"dbMusicDown.plist"];
     NSDictionary *plistDict = [NSDictionary dictionaryWithObjects:
                                    [NSArray arrayWithObjects: _loginViewController.usrAccountTextField.stringValue, _loginViewController.usrPasswordTextField.stringValue, bAutoLogin, nil]
                                                           forKeys:[NSArray arrayWithObjects: @"Account", @"Password", @"AutoLogin", nil]];

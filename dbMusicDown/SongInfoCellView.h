@@ -15,6 +15,7 @@
 @property(assign) IBOutlet NSTextField *artistTextField;
 @property(assign) IBOutlet NSTextField *albumTextField;
 @property(assign) IBOutlet NSButton    *downloadButton;
+@property(assign) IBOutlet NSButton    *openFolderButton;
 @property(assign) IBOutlet NSProgressIndicator *downloadProgress;
 
 @end

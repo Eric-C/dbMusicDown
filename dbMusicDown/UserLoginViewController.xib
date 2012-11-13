@@ -49,7 +49,6 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{277, 20}, {120, 18}}</string>
 						<reference key="NSSuperview" ref="1005"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="618725931">

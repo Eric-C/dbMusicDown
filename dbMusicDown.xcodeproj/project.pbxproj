@@ -47,6 +47,10 @@
 		07A6F713164E76BE0009CFDD /* SongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6F711164E76BE0009CFDD /* SongListViewController.m */; };
 		07A6F714164E76BE0009CFDD /* SongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6F712164E76BE0009CFDD /* SongListViewController.xib */; };
 		07A82BA116513EAC0037115C /* SongInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A82BA016513EAC0037115C /* SongInfoCellView.m */; };
+		07B79DFE1652A0080068D54E /* DefaultAlbum.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B79DFD1652A0080068D54E /* DefaultAlbum.png */; };
+		07B79E011652A0870068D54E /* DownloadButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B79E001652A0870068D54E /* DownloadButton.png */; };
+		07B79E031652A1420068D54E /* StopDownload.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B79E021652A1420068D54E /* StopDownload.png */; };
+		07B79E051652A6B70068D54E /* OpenFolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B79E041652A6B70068D54E /* OpenFolder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +132,10 @@
 		07A6F712164E76BE0009CFDD /* SongListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListViewController.xib; sourceTree = "<group>"; };
 		07A82B9F16513EAC0037115C /* SongInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfoCellView.h; sourceTree = "<group>"; };
 		07A82BA016513EAC0037115C /* SongInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfoCellView.m; sourceTree = "<group>"; };
+		07B79DFD1652A0080068D54E /* DefaultAlbum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultAlbum.png; sourceTree = "<group>"; };
+		07B79E001652A0870068D54E /* DownloadButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownloadButton.png; sourceTree = "<group>"; };
+		07B79E021652A1420068D54E /* StopDownload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StopDownload.png; sourceTree = "<group>"; };
+		07B79E041652A6B70068D54E /* OpenFolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpenFolder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +284,10 @@
 		079696581647556F00842CB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				07B79E021652A1420068D54E /* StopDownload.png */,
+				07B79E041652A6B70068D54E /* OpenFolder.png */,
+				07B79DFD1652A0080068D54E /* DefaultAlbum.png */,
+				07B79E001652A0870068D54E /* DownloadButton.png */,
 				071A8243164E2BC0004F1697 /* favicon_48x48.png */,
 				079696591647556F00842CB5 /* dbMusicDown-Info.plist */,
 				0796965A1647556F00842CB5 /* InfoPlist.strings */,
@@ -377,6 +389,10 @@
 				07A6F70E164E6E180009CFDD /* UserInfoViewController.xib in Resources */,
 				07A6F714164E76BE0009CFDD /* SongListViewController.xib in Resources */,
 				077848AB164EAE32008A9F34 /* DownloadViewController.xib in Resources */,
+				07B79DFE1652A0080068D54E /* DefaultAlbum.png in Resources */,
+				07B79E011652A0870068D54E /* DownloadButton.png in Resources */,
+				07B79E031652A1420068D54E /* StopDownload.png in Resources */,
+				07B79E051652A6B70068D54E /* OpenFolder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
