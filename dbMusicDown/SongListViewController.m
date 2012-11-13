@@ -11,8 +11,6 @@
 #import "dbLikelistFetch.h"
 @interface SongListViewController ()
 
-@property (retain) NSMutableDictionary *downLoadingSongs;
-
 @end
 
 @implementation SongListViewController
@@ -47,11 +45,28 @@
 - (IBAction)downloadClicked:(id)sender {
     NSInteger row = [_tableView rowForView:sender];
     if (row != -1) {
-        DoubanMusicInfo *musicInfo = [[dbLikelistFetch sharedInstance].songList objectAtIndex:row];
-        NSURL *url = [NSURL URLWithString:musicInfo.songUrl];
-        NSURLRequest* request = [NSURLRequest requestWithURL:url];
-        NSURLDownload *download = [[NSURLDownload alloc] initWithRequest:request delegate:self];
-        [_downLoadingSongs setValue:download forKey:[[NSNumber numberWithInteger:row] stringValue]];
+        NSArray *keyArray = [_downLoadingSongs allKeys];
+        NSNumber *findRow = nil;
+        for (NSInteger i = 0; i < keyArray.count; ++i) {
+            findRow = [keyArray objectAtIndex:i];
+            if (row == [findRow integerValue]) {
+                break;
+            }
+        }
+        NSURLDownload *dowload = [_downLoadingSongs objectForKey:findRow];
+        //Cancel Download
+        if (dowload != nil) {
+            [dowload cancel];
+            [dowload release];
+            [_downLoadingSongs removeObjectForKey:findRow];
+        } else {
+            //Start Download
+            DoubanMusicInfo *musicInfo = [[dbLikelistFetch sharedInstance].songList objectAtIndex:row];
+            NSURL *url = [NSURL URLWithString:musicInfo.songUrl];
+            NSURLRequest* request = [NSURLRequest requestWithURL:url];
+            NSURLDownload *download = [[NSURLDownload alloc] initWithRequest:request delegate:self];
+            [_downLoadingSongs setValue:download forKey:[[NSNumber numberWithInteger:row] stringValue]];
+        }
     }
 }
 

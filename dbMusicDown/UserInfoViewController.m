@@ -16,6 +16,7 @@
 @implementation UserInfoViewController
 @synthesize userAccountTextField = _userAccountTextField;
 @synthesize userNicknameTextField = _userNicknameTextField;
+@synthesize delegate = _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +29,7 @@
 }
 
 - (IBAction)logoutClicked:(NSButton *)sender {
+    [_delegate loginOutUsrname:[dbLikelistFetch sharedInstance].loginInfo.email];
 }
 
 - (void) refreshUserInfo{

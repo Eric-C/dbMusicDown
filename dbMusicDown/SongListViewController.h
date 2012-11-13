@@ -11,6 +11,7 @@
 @interface SongListViewController : NSViewController <NSTableViewDataSource, NSURLDownloadDelegate>
 
 @property (assign) IBOutlet NSTableView *tableView;
+@property (retain) NSMutableDictionary *downLoadingSongs;
 
 - (IBAction)downloadClicked:(id)sender;
 

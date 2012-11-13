@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 #import "UserLoginViewController.h"
+#import "UserInfoViewController.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, LoginDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, LoginDelegate, LogoutDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSView *usrLoginAndInfoViewTarget;

@@ -7,8 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
-#import "UserLoginViewController.h"
-#import "UserInfoViewController.h"
+
 #import "SongListViewController.h"
 #import "DownloadViewController.h"
 #import "dbLikelistFetch.h"
@@ -50,6 +49,8 @@ NSString *const kDownloadView = @"DownloadViewController";
     } else{
         [_loginViewController.view setHidden:NO];
         [_usrInfoViewController.view setHidden:YES];
+        [[dbLikelistFetch sharedInstance] clearAllInfo];
+        [_songListViewController.tableView reloadData];
     }
 }
 
@@ -77,6 +78,7 @@ NSString *const kDownloadView = @"DownloadViewController";
     [_loginViewController.view setFrame:_usrLoginAndInfoViewTarget.bounds];
     
     _usrInfoViewController = [[UserInfoViewController alloc] initWithNibName:kUserInfoView bundle:nil];
+    _usrInfoViewController.delegate = self;
     [_usrLoginAndInfoViewTarget addSubview:_usrInfoViewController.view];
     [_usrInfoViewController.view setFrame:_usrLoginAndInfoViewTarget.bounds];
     
@@ -88,10 +90,53 @@ NSString *const kDownloadView = @"DownloadViewController";
     [_downloadViewTarget addSubview:_downloadViewController.view];
     [_downloadViewController.view setFrame:_downloadViewTarget.bounds];
     
-    //_songListViewController.delegate = _downloadViewController;
+    NSString *errorDesc = nil;
+    NSPropertyListFormat format;
+    NSString *plistPath;
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                              NSUserDomainMask, YES) objectAtIndex:0];
+    plistPath = [rootPath stringByAppendingPathComponent:@"Data.plist"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
+        plistPath = [[NSBundle mainBundle] pathForResource:@"Data" ofType:@"plist"];
+    }
+    NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+    NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization
+                                          propertyListFromData:plistXML
+                                          mutabilityOption:NSPropertyListMutableContainersAndLeaves
+                                          format:&format
+                                          errorDescription:&errorDesc];
+   
+    NSNumber *bAutoLogin = [temp objectForKey:@"AutoLogin"];
+    if ([bAutoLogin integerValue]) {
+        NSString *usrAccount = [temp objectForKey:@"Account"];
+        NSString *usrPassword = [temp objectForKey:@"Password"];
+        [self loginWithUsrname:usrAccount Password:usrPassword];
+    }
+    else
+    {
+        self.isLogin = NO;
+    }
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification
+{
+    NSNumber *bAutoLogin = [NSNumber numberWithInteger:_loginViewController.autoLoginCheckbox.state];
     
-    //Show UsrLoginView if not autoLogin
-    self.isLogin = NO;
+    NSString *error;
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *plistPath = [rootPath stringByAppendingPathComponent:@"Data.plist"];
+    NSDictionary *plistDict = [NSDictionary dictionaryWithObjects:
+                                   [NSArray arrayWithObjects: _loginViewController.usrAccountTextField.stringValue, _loginViewController.usrPasswordTextField.stringValue, bAutoLogin, nil]
+                                                          forKeys:[NSArray arrayWithObjects: @"Account", @"Password", @"AutoLogin", nil]];
+    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:plistDict
+                                                                       format:NSPropertyListXMLFormat_v1_0
+                                                             errorDescription:&error];
+    if(plistData) {
+        [plistData writeToFile:plistPath atomically:YES];
+    }
+    else {
+        [error release];
+    }
 }
 
 - (void)loginWithUsrname:(NSString *)userName Password:(NSString *)password
@@ -106,6 +151,22 @@ NSString *const kDownloadView = @"DownloadViewController";
 
         }
     } else{
+        self.isLogin = NO;
+    }
+}
+
+- (void)loginOutUsrname:(NSString *)userName
+{
+    //Log out
+    if (_songListViewController.downLoadingSongs.count != 0) {
+        NSAlert *logoutAlert = [NSAlert alertWithMessageText:@"有音乐正在下载，无法退出当前用户"
+                                             defaultButton:@"OK"
+                                           alternateButton:nil
+                                               otherButton:nil
+                                 informativeTextWithFormat:@"取消下载或等待下载完成之后，再退出当前用户"];
+        [logoutAlert setAlertStyle:NSCriticalAlertStyle];
+        [logoutAlert runModal];
+    } else {
         self.isLogin = NO;
     }
 }

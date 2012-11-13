@@ -118,4 +118,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(dbLikelistFetch);
     return error;
 }
 
+- (void)clearAllInfo
+{
+    [self.loginInfo release];
+    self.loginInfo = [[LoginInfo alloc] init];
+    
+    [self.songList removeAllObjects];
+}
 @end

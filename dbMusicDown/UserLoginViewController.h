@@ -19,7 +19,8 @@
 
 @property (assign) IBOutlet NSTextField *usrAccountTextField;
 @property (assign) IBOutlet NSSecureTextField *usrPasswordTextField;
-@property (nonatomic, retain) id<LoginDelegate> delegate;
+@property (assign) IBOutlet NSButton *autoLoginCheckbox;
+@property (nonatomic, assign) id<LoginDelegate> delegate;
 
 - (IBAction)loginClicked:(NSButton *)sender;
 

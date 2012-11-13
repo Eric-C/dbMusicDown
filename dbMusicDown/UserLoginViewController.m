@@ -15,6 +15,7 @@
 @implementation UserLoginViewController
 @synthesize usrAccountTextField = _usrAccountTextField;
 @synthesize usrPasswordTextField = _usrPasswordTextField;
+@synthesize autoLoginCheckbox = _autoLoginCheckbox;
 @synthesize delegate = _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,4 +32,5 @@
     [_delegate loginWithUsrname:_usrAccountTextField.stringValue
                        Password:_usrPasswordTextField.stringValue];
 }
+
 @end

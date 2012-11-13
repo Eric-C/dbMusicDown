@@ -73,6 +73,7 @@
 
 - (NSError *)LoginWithUsername:(NSString *)userName Password:(NSString *)password;
 - (NSError *)FetchLikeList;
+- (void)clearAllInfo;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(dbLikelistFetch);
 @end

@@ -149,7 +149,6 @@
 		071A824A164E2D2C004F1697 /* UserLogin */ = {
 			isa = PBXGroup;
 			children = (
-				071A824B164E48E1004F1697 /* SynthesizeSingleton.h */,
 				071A8245164E2D23004F1697 /* UserLoginViewController.h */,
 				071A8246164E2D23004F1697 /* UserLoginViewController.m */,
 				071A8247164E2D23004F1697 /* UserLoginViewController.xib */,
@@ -264,6 +263,7 @@
 				071A824A164E2D2C004F1697 /* UserLogin */,
 				07998650164B96E400332D2D /* dbLikelistFetch.h */,
 				07998651164B96E400332D2D /* dbLikelistFetch.m */,
+				071A824B164E48E1004F1697 /* SynthesizeSingleton.h */,
 				07998647164B3E0400332D2D /* dbMusicDown-Info.plist */,
 				079696631647556F00842CB5 /* AppDelegate.h */,
 				079696641647556F00842CB5 /* AppDelegate.m */,

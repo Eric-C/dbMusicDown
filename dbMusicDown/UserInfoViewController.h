@@ -8,10 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol LogoutDelegate
+
+@required -(void)loginOutUsrname:(NSString *)userName;
+
+@end
+
 @interface UserInfoViewController : NSViewController
 
 @property (assign) IBOutlet NSTextField *userAccountTextField;
 @property (assign) IBOutlet NSTextField *userNicknameTextField;
+@property (nonatomic, assign) id<LogoutDelegate> delegate;
 
 - (IBAction)logoutClicked:(NSButton *)sender;
 - (void) refreshUserInfo;
