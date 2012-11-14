@@ -47,6 +47,7 @@
 		07A6F713164E76BE0009CFDD /* SongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6F711164E76BE0009CFDD /* SongListViewController.m */; };
 		07A6F714164E76BE0009CFDD /* SongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6F712164E76BE0009CFDD /* SongListViewController.xib */; };
 		07A82BA116513EAC0037115C /* SongInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A82BA016513EAC0037115C /* SongInfoCellView.m */; };
+		07B360F216538A4E00374CE8 /* dbMusicDown.icns in Resources */ = {isa = PBXBuildFile; fileRef = 07B360F116538A4E00374CE8 /* dbMusicDown.icns */; };
 		07B79DFE1652A0080068D54E /* DefaultAlbum.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B79DFD1652A0080068D54E /* DefaultAlbum.png */; };
 		07B79E011652A0870068D54E /* DownloadButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B79E001652A0870068D54E /* DownloadButton.png */; };
 		07B79E031652A1420068D54E /* StopDownload.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B79E021652A1420068D54E /* StopDownload.png */; };
@@ -132,6 +133,8 @@
 		07A6F712164E76BE0009CFDD /* SongListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListViewController.xib; sourceTree = "<group>"; };
 		07A82B9F16513EAC0037115C /* SongInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfoCellView.h; sourceTree = "<group>"; };
 		07A82BA016513EAC0037115C /* SongInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfoCellView.m; sourceTree = "<group>"; };
+		07B360ED1653815F00374CE8 /* dbMusicDown.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = dbMusicDown.entitlements; sourceTree = "<group>"; };
+		07B360F116538A4E00374CE8 /* dbMusicDown.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = dbMusicDown.icns; sourceTree = "<group>"; };
 		07B79DFD1652A0080068D54E /* DefaultAlbum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultAlbum.png; sourceTree = "<group>"; };
 		07B79E001652A0870068D54E /* DownloadButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownloadButton.png; sourceTree = "<group>"; };
 		07B79E021652A1420068D54E /* StopDownload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StopDownload.png; sourceTree = "<group>"; };
@@ -265,6 +268,7 @@
 		079696571647556F00842CB5 /* dbMusicDown */ = {
 			isa = PBXGroup;
 			children = (
+				07B360ED1653815F00374CE8 /* dbMusicDown.entitlements */,
 				07A6F718164EA8120009CFDD /* Download */,
 				07A6F70F164E76330009CFDD /* SongList */,
 				07A6F709164E6DF90009CFDD /* UserInfo */,
@@ -284,6 +288,7 @@
 		079696581647556F00842CB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				07B360F116538A4E00374CE8 /* dbMusicDown.icns */,
 				07B79E021652A1420068D54E /* StopDownload.png */,
 				07B79E041652A6B70068D54E /* OpenFolder.png */,
 				07B79DFD1652A0080068D54E /* DefaultAlbum.png */,
@@ -393,6 +398,7 @@
 				07B79E011652A0870068D54E /* DownloadButton.png in Resources */,
 				07B79E031652A1420068D54E /* StopDownload.png in Resources */,
 				07B79E051652A6B70068D54E /* OpenFolder.png in Resources */,
+				07B360F216538A4E00374CE8 /* dbMusicDown.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,11 +523,14 @@
 		0796966C1647556F00842CB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "dbMusicDown/dbMusicDown-Prefix.pch";
 				INFOPLIST_FILE = "dbMusicDown/dbMusicDown-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -529,11 +538,14 @@
 		0796966D1647556F00842CB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "dbMusicDown/dbMusicDown-Prefix.pch";
 				INFOPLIST_FILE = "dbMusicDown/dbMusicDown-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

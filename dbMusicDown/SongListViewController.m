@@ -10,7 +10,7 @@
 #import "SongInfoCellView.h"
 #import "dbLikelistFetch.h"
 @interface SongListViewController ()
-
+@property(retain) NSImage *stopDownloadImage;
 @property(assign) Boolean bDownloadAll;
 - (void)downloadMusicByIndex: (NSInteger)row;
 
@@ -20,6 +20,7 @@
 @synthesize tableView = _tableView;
 @synthesize downLoadingSongs = _downLoadingSongs;
 @synthesize bDownloadAll = _bDownloadAll;
+@synthesize stopDownloadImage = _stopDownloadImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +29,7 @@
         // Initialization code here.
         _downLoadingSongs = [[NSMutableDictionary alloc] init];
         _bDownloadAll = NO;
+        _stopDownloadImage = [NSImage imageNamed:@"DownloadButton.png"];
     }
     
     return self;
@@ -68,7 +70,8 @@
         [_downLoadingSongs removeObjectForKey:findRow];
         
         [cellView.downloadProgress setHidden:YES];
-        cellView.downloadButton.image = [NSImage imageNamed:@"DownloadButton.png"];
+        cellView.downloadButton.image = _stopDownloadImage;
+        [cellView.downloadButton setBordered:NO];
         
     } else {
         //Start Download
