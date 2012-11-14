@@ -29,7 +29,7 @@
 }
 
 - (IBAction)logoutClicked:(NSButton *)sender {
-    [_delegate loginOutUsrname:[dbLikelistFetch sharedInstance].loginInfo.email];
+    [_delegate loginOutUsrname:nil];
 }
 
 - (IBAction)downloadAllClicked:(NSButton *)sender{

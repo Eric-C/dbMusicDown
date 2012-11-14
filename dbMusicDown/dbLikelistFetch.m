@@ -48,6 +48,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(dbLikelistFetch);
         SBJsonParser* sjonParser = [[SBJsonParser alloc] init];
         NSMutableDictionary *responseDic = [sjonParser objectWithString:loginResponse error:nil];
  
+        NSString *errMsg = [responseDic objectForKey:@"r"];
+        if ([errMsg integerValue] != 0) {
+            error = [NSError errorWithDomain:errMsg code:0 userInfo:nil];
+            return error;
+        }
+        
         if (_loginInfo == NULL) {
             _loginInfo = [[LoginInfo alloc] init];
         }
@@ -120,8 +126,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(dbLikelistFetch);
 
 - (void)clearAllInfo
 {
-    [self.loginInfo release];
-    self.loginInfo = [[LoginInfo alloc] init];
+    self.loginInfo.token = @"";
+    self.loginInfo.user_id = @"";
+    self.loginInfo.user_name = @"";
+    self.loginInfo.expire = @"";
+    self.loginInfo.email = @"";
     
     [self.songList removeAllObjects];
 }

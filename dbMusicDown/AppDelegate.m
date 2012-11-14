@@ -9,20 +9,20 @@
 #import "AppDelegate.h"
 
 #import "SongListViewController.h"
-#import "DownloadViewController.h"
+#import "BannerViewController.h"
 #import "dbLikelistFetch.h"
 
 NSString *const kUserLoginView = @"UserLoginViewController";
 NSString *const kUserInfoView = @"UserInfoViewController";
 NSString *const kSongListView = @"SongListViewController";
-NSString *const kDownloadView = @"DownloadViewController";
+NSString *const kBannerdView = @"BannerViewController";
 
 @interface AppDelegate ()
 
 @property (nonatomic, retain) UserLoginViewController *loginViewController;
 @property (nonatomic, retain) UserInfoViewController *usrInfoViewController;
 @property (nonatomic, retain) SongListViewController *songListViewController;
-@property (nonatomic, retain) DownloadViewController *downloadViewController;
+@property (nonatomic, retain) BannerViewController *bannerViewController;
 @property (assign) Boolean isLogin;
 
 @end
@@ -30,11 +30,11 @@ NSString *const kDownloadView = @"DownloadViewController";
 @implementation AppDelegate
 @synthesize usrLoginAndInfoViewTarget = _usrLoginAndInfoViewTarget;
 @synthesize tableViewTarget = _tableViewTarget;
-@synthesize downloadViewTarget = _downloadViewTarget;
+@synthesize bannerViewTarget = _bannerViewTarget;
 @synthesize loginViewController = _loginViewController;
 @synthesize usrInfoViewController = _usrInfoViewController;
 @synthesize songListViewController = _songListViewController;
-@synthesize downloadViewController = _downloadViewController;
+@synthesize bannerViewController = _bannerViewController;
 @synthesize isLogin = _isLogin;
 
 - (void) setIsLogin:(Boolean)isLogin
@@ -86,9 +86,9 @@ NSString *const kDownloadView = @"DownloadViewController";
     [_tableViewTarget addSubview:_songListViewController.view];
     [_songListViewController.view setFrame:_tableViewTarget.bounds];
    
-    _downloadViewController = [[DownloadViewController alloc] initWithNibName:kDownloadView bundle:nil];
-    [_downloadViewTarget addSubview:_downloadViewController.view];
-    [_downloadViewController.view setFrame:_downloadViewTarget.bounds];
+    _bannerViewController = [[BannerViewController alloc] initWithNibName:kBannerdView bundle:nil];
+    [_bannerViewTarget addSubview:_bannerViewController.view];
+    [_bannerViewController.view setFrame:_bannerViewTarget.bounds];
     
     NSString *errorDesc = nil;
     NSPropertyListFormat format;
@@ -150,6 +150,14 @@ NSString *const kDownloadView = @"DownloadViewController";
 
         }
     } else{
+        NSAlert *logoinAlert = [NSAlert alertWithMessageText:@"登陆失败"
+                                               defaultButton:@"OK"
+                                             alternateButton:nil
+                                                 otherButton:nil
+                                   informativeTextWithFormat:@"请确保网络正常，以及用户名密码正确！"];
+        [logoinAlert setAlertStyle:NSInformationalAlertStyle];
+        [logoinAlert runModal];
+        
         self.isLogin = NO;
     }
 }

@@ -33,8 +33,6 @@
 		0757D5EF164AA778006CF0BE /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0757D5E1164AA778006CF0BE /* SBJsonTokeniser.m */; };
 		0757D5F0164AA778006CF0BE /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 0757D5E3164AA778006CF0BE /* SBJsonUTF8Stream.m */; };
 		0757D5F1164AA778006CF0BE /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0757D5E5164AA778006CF0BE /* SBJsonWriter.m */; };
-		077848AA164EAE32008A9F34 /* DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077848A8164EAE32008A9F34 /* DownloadViewController.m */; };
-		077848AB164EAE32008A9F34 /* DownloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077848A9164EAE32008A9F34 /* DownloadViewController.xib */; };
 		079696521647556F00842CB5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079696511647556F00842CB5 /* Cocoa.framework */; };
 		0796965C1647556F00842CB5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0796965A1647556F00842CB5 /* InfoPlist.strings */; };
 		0796965E1647556F00842CB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796965D1647556F00842CB5 /* main.m */; };
@@ -48,6 +46,8 @@
 		07A6F714164E76BE0009CFDD /* SongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6F712164E76BE0009CFDD /* SongListViewController.xib */; };
 		07A82BA116513EAC0037115C /* SongInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A82BA016513EAC0037115C /* SongInfoCellView.m */; };
 		07B360F216538A4E00374CE8 /* dbMusicDown.icns in Resources */ = {isa = PBXBuildFile; fileRef = 07B360F116538A4E00374CE8 /* dbMusicDown.icns */; };
+		07B360F61653B44700374CE8 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B360F41653B44700374CE8 /* BannerViewController.m */; };
+		07B360F71653B44700374CE8 /* BannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B360F51653B44700374CE8 /* BannerViewController.xib */; };
 		07B79DFE1652A0080068D54E /* DefaultAlbum.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B79DFD1652A0080068D54E /* DefaultAlbum.png */; };
 		07B79E011652A0870068D54E /* DownloadButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B79E001652A0870068D54E /* DownloadButton.png */; };
 		07B79E031652A1420068D54E /* StopDownload.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B79E021652A1420068D54E /* StopDownload.png */; };
@@ -106,9 +106,6 @@
 		0757D5E3164AA778006CF0BE /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		0757D5E4164AA778006CF0BE /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		0757D5E5164AA778006CF0BE /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		077848A7164EAE32008A9F34 /* DownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadViewController.h; sourceTree = "<group>"; };
-		077848A8164EAE32008A9F34 /* DownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadViewController.m; sourceTree = "<group>"; };
-		077848A9164EAE32008A9F34 /* DownloadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadViewController.xib; sourceTree = "<group>"; };
 		0796964D1647556F00842CB5 /* dbMusicDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dbMusicDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		079696511647556F00842CB5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		079696541647556F00842CB5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -133,8 +130,10 @@
 		07A6F712164E76BE0009CFDD /* SongListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListViewController.xib; sourceTree = "<group>"; };
 		07A82B9F16513EAC0037115C /* SongInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfoCellView.h; sourceTree = "<group>"; };
 		07A82BA016513EAC0037115C /* SongInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfoCellView.m; sourceTree = "<group>"; };
-		07B360ED1653815F00374CE8 /* dbMusicDown.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = dbMusicDown.entitlements; sourceTree = "<group>"; };
 		07B360F116538A4E00374CE8 /* dbMusicDown.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = dbMusicDown.icns; sourceTree = "<group>"; };
+		07B360F31653B44700374CE8 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		07B360F41653B44700374CE8 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		07B360F51653B44700374CE8 /* BannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BannerViewController.xib; sourceTree = "<group>"; };
 		07B79DFD1652A0080068D54E /* DefaultAlbum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultAlbum.png; sourceTree = "<group>"; };
 		07B79E001652A0870068D54E /* DownloadButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownloadButton.png; sourceTree = "<group>"; };
 		07B79E021652A1420068D54E /* StopDownload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StopDownload.png; sourceTree = "<group>"; };
@@ -268,8 +267,7 @@
 		079696571647556F00842CB5 /* dbMusicDown */ = {
 			isa = PBXGroup;
 			children = (
-				07B360ED1653815F00374CE8 /* dbMusicDown.entitlements */,
-				07A6F718164EA8120009CFDD /* Download */,
+				07A6F718164EA8120009CFDD /* Banner */,
 				07A6F70F164E76330009CFDD /* SongList */,
 				07A6F709164E6DF90009CFDD /* UserInfo */,
 				071A824A164E2D2C004F1697 /* UserLogin */,
@@ -325,14 +323,14 @@
 			name = SongList;
 			sourceTree = "<group>";
 		};
-		07A6F718164EA8120009CFDD /* Download */ = {
+		07A6F718164EA8120009CFDD /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				077848A7164EAE32008A9F34 /* DownloadViewController.h */,
-				077848A8164EAE32008A9F34 /* DownloadViewController.m */,
-				077848A9164EAE32008A9F34 /* DownloadViewController.xib */,
+				07B360F31653B44700374CE8 /* BannerViewController.h */,
+				07B360F41653B44700374CE8 /* BannerViewController.m */,
+				07B360F51653B44700374CE8 /* BannerViewController.xib */,
 			);
-			name = Download;
+			name = Banner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,12 +391,12 @@
 				071A8249164E2D23004F1697 /* UserLoginViewController.xib in Resources */,
 				07A6F70E164E6E180009CFDD /* UserInfoViewController.xib in Resources */,
 				07A6F714164E76BE0009CFDD /* SongListViewController.xib in Resources */,
-				077848AB164EAE32008A9F34 /* DownloadViewController.xib in Resources */,
 				07B79DFE1652A0080068D54E /* DefaultAlbum.png in Resources */,
 				07B79E011652A0870068D54E /* DownloadButton.png in Resources */,
 				07B79E031652A1420068D54E /* StopDownload.png in Resources */,
 				07B79E051652A6B70068D54E /* OpenFolder.png in Resources */,
 				07B360F216538A4E00374CE8 /* dbMusicDown.icns in Resources */,
+				07B360F71653B44700374CE8 /* BannerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,8 +432,8 @@
 				071A8248164E2D23004F1697 /* UserLoginViewController.m in Sources */,
 				07A6F70D164E6E180009CFDD /* UserInfoViewController.m in Sources */,
 				07A6F713164E76BE0009CFDD /* SongListViewController.m in Sources */,
-				077848AA164EAE32008A9F34 /* DownloadViewController.m in Sources */,
 				07A82BA116513EAC0037115C /* SongInfoCellView.m in Sources */,
+				07B360F61653B44700374CE8 /* BannerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
