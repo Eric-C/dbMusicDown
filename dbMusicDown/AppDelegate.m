@@ -170,4 +170,9 @@ NSString *const kDownloadView = @"DownloadViewController";
     }
 }
 
+- (void)downloadAll
+{
+    [_songListViewController downloadAll];
+}
+
 @end

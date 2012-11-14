@@ -52,8 +52,9 @@
     NSArray *keyArray = [_downLoadingSongs allKeys];
     NSNumber *findRow = nil;
     for (NSInteger i = 0; i < keyArray.count; ++i) {
-        findRow = [keyArray objectAtIndex:i];
-        if (row == [findRow integerValue]) {
+        NSNumber *currentRow = [keyArray objectAtIndex:i];
+        if (row == [currentRow integerValue]) {
+            findRow = currentRow;
             break;
         }
     }
@@ -98,9 +99,11 @@
     [[NSWorkspace sharedWorkspace] selectFile:[fileURL path] inFileViewerRootedAtPath:nil];
 }
 
-- (IBAction)downloadAllClicked:(id)sender
+- (void)downloadAll
 {
-
+    for (NSInteger i = 0; i < [dbLikelistFetch sharedInstance].songList.count; ++i) {
+        [self downloadMusicByIndex:i];
+    }
 }
 
 - (void)download:(NSURLDownload *)aDownload decideDestinationWithSuggestedFilename:(NSString *)filename

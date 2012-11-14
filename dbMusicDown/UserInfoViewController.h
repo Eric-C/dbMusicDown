@@ -11,6 +11,7 @@
 @protocol LogoutDelegate
 
 @required -(void)loginOutUsrname:(NSString *)userName;
+@required -(void)downloadAll;
 
 @end
 
@@ -21,5 +22,6 @@
 @property (nonatomic, assign) id<LogoutDelegate> delegate;
 
 - (IBAction)logoutClicked:(NSButton *)sender;
+- (IBAction)downloadAllClicked:(NSButton *)sender;
 - (void) refreshUserInfo;
 @end

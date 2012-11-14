@@ -15,6 +15,6 @@
 
 - (IBAction)downloadClicked:(id)sender;
 - (IBAction)openFolderClicked:(id)sender;
-- (IBAction)downloadAllClicked:(id)sender;
+- (void)downloadAll;
 
 @end

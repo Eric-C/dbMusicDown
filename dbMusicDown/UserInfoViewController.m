@@ -32,6 +32,10 @@
     [_delegate loginOutUsrname:[dbLikelistFetch sharedInstance].loginInfo.email];
 }
 
+- (IBAction)downloadAllClicked:(NSButton *)sender{
+    [_delegate downloadAll];
+}
+
 - (void) refreshUserInfo{
     _userAccountTextField.stringValue = [dbLikelistFetch sharedInstance].loginInfo.email;
     _userNicknameTextField.stringValue = [dbLikelistFetch sharedInstance].loginInfo.user_name;
