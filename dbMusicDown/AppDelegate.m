@@ -70,6 +70,11 @@ NSString *const kBannerdView = @"BannerViewController";
     // Insert code here to initialize your application
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
+}
+
 - (void)awakeFromNib
 {
     _loginViewController = [[UserLoginViewController alloc] initWithNibName:kUserLoginView bundle:nil];
@@ -93,19 +98,22 @@ NSString *const kBannerdView = @"BannerViewController";
     NSString *errorDesc = nil;
     NSPropertyListFormat format;
     NSString *plistPath;
+    NSDictionary *temp = nil;
     NSString *rootPath = NSTemporaryDirectory();
+
+    NSNumber *bAutoLogin = 0;
     plistPath = [rootPath stringByAppendingPathComponent:@"dbMusicDown.plist"];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
-        plistPath = [[NSBundle mainBundle] pathForResource:@"Data" ofType:@"plist"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
+        NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+        temp = (NSDictionary *)[NSPropertyListSerialization
+                                              propertyListFromData:plistXML
+                                              mutabilityOption:NSPropertyListMutableContainersAndLeaves
+                                              format:&format
+                                              errorDescription:&errorDesc];
+        
+        bAutoLogin = [temp objectForKey:@"AutoLogin"];
     }
-    NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
-    NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization
-                                          propertyListFromData:plistXML
-                                          mutabilityOption:NSPropertyListMutableContainersAndLeaves
-                                          format:&format
-                                          errorDescription:&errorDesc];
-   
-    NSNumber *bAutoLogin = [temp objectForKey:@"AutoLogin"];
+    
     if ([bAutoLogin integerValue]) {
         NSString *usrAccount = [temp objectForKey:@"Account"];
         NSString *usrPassword = [temp objectForKey:@"Password"];
@@ -121,20 +129,22 @@ NSString *const kBannerdView = @"BannerViewController";
 {
     NSNumber *bAutoLogin = [NSNumber numberWithInteger:_loginViewController.autoLoginCheckbox.state];
     
-    NSString *error;
-    NSString *rootPath = NSTemporaryDirectory();
-    NSString *plistPath = [rootPath stringByAppendingPathComponent:@"dbMusicDown.plist"];
-    NSDictionary *plistDict = [NSDictionary dictionaryWithObjects:
+    if (self.isLogin == YES) {
+        NSString *error;
+        NSString *rootPath = NSTemporaryDirectory();
+        NSString *plistPath = [rootPath stringByAppendingPathComponent:@"dbMusicDown.plist"];
+        NSDictionary *plistDict = [NSDictionary dictionaryWithObjects:
                                    [NSArray arrayWithObjects: _loginViewController.usrAccountTextField.stringValue, _loginViewController.usrPasswordTextField.stringValue, bAutoLogin, nil]
-                                                          forKeys:[NSArray arrayWithObjects: @"Account", @"Password", @"AutoLogin", nil]];
-    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:plistDict
+                                                              forKeys:[NSArray arrayWithObjects: @"Account", @"Password", @"AutoLogin", nil]];
+        NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:plistDict
                                                                        format:NSPropertyListXMLFormat_v1_0
                                                              errorDescription:&error];
-    if(plistData) {
-        [plistData writeToFile:plistPath atomically:YES];
-    }
-    else {
-        [error release];
+        if(plistData) {
+            [plistData writeToFile:plistPath atomically:YES];
+        }
+        else {
+            [error release];
+        }
     }
 }
 

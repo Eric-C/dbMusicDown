@@ -25,6 +25,6 @@
 }
 
 - (IBAction)onlineReportClicked:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.newdelete.com"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.newdelete.com/blog/index.php/2012/11/the-watercress-hearts-music-download-tool/"]];
 }
 @end
