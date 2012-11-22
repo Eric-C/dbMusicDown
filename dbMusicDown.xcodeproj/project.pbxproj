@@ -122,6 +122,8 @@
 		07998647164B3E0400332D2D /* dbMusicDown-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dbMusicDown-Info.plist"; sourceTree = "<group>"; };
 		07998650164B96E400332D2D /* dbLikelistFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbLikelistFetch.h; sourceTree = "<group>"; };
 		07998651164B96E400332D2D /* dbLikelistFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbLikelistFetch.m; sourceTree = "<group>"; };
+		07A3AF4A165E3301008AD19B /* QQMusicFetch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QQMusicFetch.m; path = dbMusicDown/QQMusicFetch.m; sourceTree = "<group>"; };
+		07A3AF4B165E3301008AD19B /* QQMusicFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QQMusicFetch.h; path = dbMusicDown/QQMusicFetch.h; sourceTree = "<group>"; };
 		07A6F70A164E6E180009CFDD /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		07A6F70B164E6E180009CFDD /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		07A6F70C164E6E180009CFDD /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		079696421647556F00842CB5 = {
 			isa = PBXGroup;
 			children = (
+				07A3AF45165E0748008AD19B /* QQMusicFetch */,
 				0757D5CC164AA778006CF0BE /* SBJson */,
 				0757D5A5164A99A1006CF0BE /* ASIHttpRequest */,
 				079696571647556F00842CB5 /* dbMusicDown */,
@@ -299,6 +302,15 @@
 				079696601647556F00842CB5 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07A3AF45165E0748008AD19B /* QQMusicFetch */ = {
+			isa = PBXGroup;
+			children = (
+				07A3AF4A165E3301008AD19B /* QQMusicFetch.m */,
+				07A3AF4B165E3301008AD19B /* QQMusicFetch.h */,
+			);
+			name = QQMusicFetch;
 			sourceTree = "<group>";
 		};
 		07A6F709164E6DF90009CFDD /* UserInfo */ = {

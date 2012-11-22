@@ -11,6 +11,7 @@
 #import "SongListViewController.h"
 #import "BannerViewController.h"
 #import "dbLikelistFetch.h"
+#import "QQMusicFetch.h"
 
 NSString *const kUserLoginView = @"UserLoginViewController";
 NSString *const kUserInfoView = @"UserInfoViewController";
@@ -123,6 +124,8 @@ NSString *const kBannerdView = @"BannerViewController";
     {
         self.isLogin = NO;
     }
+    
+    [[QQMusicFetch sharedInstance] getUrlMusicName:@"我的歌声里" Artist:@"曲婉婷"];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification
