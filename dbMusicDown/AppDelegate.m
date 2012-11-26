@@ -125,7 +125,7 @@ NSString *const kBannerdView = @"BannerViewController";
         self.isLogin = NO;
     }
     
-    [[QQMusicFetch sharedInstance] getUrlMusicName:@"我的歌声里" Artist:@"曲婉婷"];
+   // [[QQMusicFetch sharedInstance] getUrlMusicName:nil Artist:@"刘德华"];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification

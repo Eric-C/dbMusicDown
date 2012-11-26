@@ -40,6 +40,8 @@
 		079696651647556F00842CB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 079696641647556F00842CB5 /* AppDelegate.m */; };
 		079696681647556F00842CB5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079696661647556F00842CB5 /* MainMenu.xib */; };
 		07998652164B96E400332D2D /* dbLikelistFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 07998651164B96E400332D2D /* dbLikelistFetch.m */; };
+		07A1307B165F060F00AC83A1 /* QQMusicFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A3AF4A165E3301008AD19B /* QQMusicFetch.m */; };
+		07A1307C165F060F00AC83A1 /* QQMusicFetch.h in Sources */ = {isa = PBXBuildFile; fileRef = 07A3AF4B165E3301008AD19B /* QQMusicFetch.h */; };
 		07A6F70D164E6E180009CFDD /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6F70B164E6E180009CFDD /* UserInfoViewController.m */; };
 		07A6F70E164E6E180009CFDD /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6F70C164E6E180009CFDD /* UserInfoViewController.xib */; };
 		07A6F713164E76BE0009CFDD /* SongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6F711164E76BE0009CFDD /* SongListViewController.m */; };
@@ -419,6 +421,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A1307B165F060F00AC83A1 /* QQMusicFetch.m in Sources */,
+				07A1307C165F060F00AC83A1 /* QQMusicFetch.h in Sources */,
 				0796965E1647556F00842CB5 /* main.m in Sources */,
 				079696651647556F00842CB5 /* AppDelegate.m in Sources */,
 				0757D5BB164A99A1006CF0BE /* ASIDataCompressor.m in Sources */,

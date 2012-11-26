@@ -21,16 +21,30 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(QQMusicFetch);
 
 - (NSString *)getUrlMusicName:(NSString *)name Artist:(NSString *)artist
 {
-    NSString *searchString = [kBaseSearchUrl stringByAppendingFormat:@"value=%@&artist=%@&type=qry_song&out=json&page_no=1&page_record_num=3", name, artist];
+    NSString *searchString = [kBaseSearchUrl stringByAppendingFormat:@"type=qry_song&out=json&page_no=1&page_record_num=3", name, artist];
+    //if (name) {
+        searchString = [searchString stringByAppendingFormat:@"&value=%@", name];
+    //}
+    //if (artist) {
+        searchString = [searchString stringByAppendingFormat:@"&artist=%@", artist];
+    //}
+   // NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+   // NSString *retStr = [[NSString alloc] initWithData:data encoding:enc];
+   // NSURL* searchUrl = [NSURL URLWithString:[searchString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
-    NSURL* searchUrl = [NSURL URLWithString:[searchString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSURL *url = [NSURL URLWithString:[searchString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+    NSString *retStr = [[NSString alloc] initWithData:data encoding:enc];
+    NSURL* searchUrl = [NSURL URLWithString:retStr];
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:searchUrl];
     [request startSynchronous];
     NSError *error = [request error];
+    NSString *returnString = nil;
     if (!error) {
-        NSString *loginResponse = [request responseString];
-        NSString *stringforParse = [loginResponse substringWithRange:NSMakeRange(15, loginResponse.length - 17)];
+        NSString *searchResponse = [request responseString];
+        NSString *stringforParse = [searchResponse substringWithRange:NSMakeRange(15, searchResponse.length - 17)];
         
         stringforParse = [stringforParse stringByReplacingOccurrencesOfString:@"result:" withString:@"\"result\":"];
         stringforParse = [stringforParse stringByReplacingOccurrencesOfString:@"msg:" withString:@"\"msg\":"];
@@ -50,45 +64,28 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(QQMusicFetch);
         
         SBJsonParser* sjonParser = [[SBJsonParser alloc] init];
         NSMutableDictionary *responseDic = [sjonParser objectWithString:stringforParse error:nil];
-/*
-        NSString* songListString = [[responseDic objectForKey:@"songs"] JSONRepresentation];
-        NSArray* songList = [sjonParser objectWithString:songListString error:nil];
+
+        NSArray *songList = [responseDic objectForKey:@"songlist"];
         
-        if (_songList == NULL) {
-            _songList = [[NSMutableArray alloc] init];
-        }
-        else{
-            [_songList removeAllObjects];
-        }
-        
-        for (NSInteger i = 0; i < songList.count; i++) {
-            NSString* theSong = [[songList objectAtIndex:i] JSONRepresentation];
-            NSDictionary *songInfoDic = [sjonParser objectWithString:theSong error:nil];
+        for (NSInteger i = 0; i < [songList count]; ++i) {
+            NSDictionary *firstSong = [songList objectAtIndex:i];
             
-            DoubanMusicInfo *theSongInfo = [[DoubanMusicInfo alloc] init];
-            theSongInfo.aid = [songInfoDic objectForKey:@"aid"];
-            theSongInfo.album = [songInfoDic objectForKey:@"album"];
-            theSongInfo.albumtitle = [[songInfoDic objectForKey:@"albumtitle"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            theSongInfo.artist = [[songInfoDic objectForKey:@"artist"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            theSongInfo.company = [[songInfoDic objectForKey:@"company"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            theSongInfo.length = [[songInfoDic objectForKey:@"length"] stringValue];
-            theSongInfo.like = [[songInfoDic objectForKey:@"like"] stringValue];
-            theSongInfo.pictureUrl = [songInfoDic objectForKey:@"picture"];
-            theSongInfo.public_time = [songInfoDic objectForKey:@"public_time"];
-            theSongInfo.rating_avg = [[songInfoDic objectForKey:@"rating_avg"] stringValue];
-            theSongInfo.sid = [songInfoDic objectForKey:@"sid"];
-            theSongInfo.ssid = [songInfoDic objectForKey:@"ssid"];
-            theSongInfo.title = [[songInfoDic objectForKey:@"title"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            theSongInfo.songUrl = [songInfoDic objectForKey:@"url"];
+            NSString *location = [firstSong objectForKey:@"location"];
+            NSString *songID = [firstSong objectForKey:@"song_id"];
+            if (songID.length < 7) {
+                continue;
+            }
+            if ([location integerValue] >= 10) {
+                continue;
+            }
             
-            [_songList addObject:theSongInfo];
+            returnString = [NSString stringWithFormat:@"http://stream1%ld.qqmusic.qq.com/3%@.mp3", [location integerValue], songID];
+            break;
         }
-*/
-        
         [sjonParser release];
     }
-
     
+    return returnString;
 }
 
 @end
